@@ -27,7 +27,7 @@ function ApplicationTime() {
   };
 
   return (
-    <div className="col-span-12 xl:col-span-8 bg-slate-800 dark:bg-slate-800 rounded-sm border border-slate-200 dark:border-slate-700">
+    <div className="flex flex-col col-span-full xl:col-span-8 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
       <div className="px-5 pt-5">
         <h2 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">
           Application Time
@@ -39,15 +39,15 @@ function ApplicationTime() {
           <div className="text-3xl font-bold text-slate-800 dark:text-slate-100 mr-2">
             Accumulate: 82
           </div>
-          {/* <div className="text-sm font-semibold text-white px-1.5 bg-emerald-500 rounded-full">
+          {<div className="text-sm font-semibold text-white px-1.5 bg-emerald-500 rounded-full">
             +49%
-          </div> */}
+          </div>}
         </div>
       </div>
       {/* Chart built with Chart.js 3 */}
-      <div className="grow">
+      <div className="flex grow">
         {/* Change the height attribute to adjust the chart height */}
-        {labels && <LineChart data={chartData} width={389} height={250} />}
+        {labels && <LineChart data={chartData} />}
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ function SkillsForm() {
           <div className="" key={skill}>
             <label className="">{skill}</label>
             <select
-              className="border rounded"
+              className="border rounded ml-2 mt-2"
               value={skills[skill]}
               onChange={(e) =>
                 handleSelectChange(skill, Number(e.target.value))

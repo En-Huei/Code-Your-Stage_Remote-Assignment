@@ -1,4 +1,4 @@
-function WelcomeBanner() {
+function WelcomeBanner(props) {
   return (
     <div className="relative p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
       {/* Content */}
@@ -7,7 +7,7 @@ function WelcomeBanner() {
           Code Your stage
         </h1>
         <p className="dark:text-indigo-200">
-          Hi everyone 👋 Here is your remote assignment
+          Hi everyone 👋 Here is {props.name}'s remote assignment
         </p>
       </div>
     </div>
