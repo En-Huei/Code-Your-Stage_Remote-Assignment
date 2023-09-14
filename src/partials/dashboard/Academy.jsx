@@ -1,10 +1,10 @@
 import DoughnutChart from "../../charts/DoughnutChart";
 import { academyStats } from "../../data/mockData";
-// import useAcademystats from "../../hooks/dashboard/useAcademystats";
+import useAcademystats from "../../hooks/dashboard/useAcademystats";
 
 function Academy() {
-  // const { labels, values } = useAcademystats();
-  const { labels, values } = academyStats;
+  const { labels, values } = useAcademystats();
+  //const { labels, values } = academyStats;
   // 生成隨機色碼的函式
   const getRandomColor = () => {
     const letters = "0123456789ABCDEF";
@@ -35,7 +35,7 @@ function Academy() {
       </header>
       {/* Chart built with Chart.js 3 */}
       {/* Change the height attribute to adjust the chart height */}
-      {labels && <DoughnutChart data={chartData}  height={350} />}
+      {labels && <DoughnutChart data={chartData} height={350} />}
     </div>
   );
 }
