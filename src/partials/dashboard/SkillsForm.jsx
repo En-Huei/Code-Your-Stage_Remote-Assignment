@@ -2,7 +2,7 @@ import { useState } from "react";
 import usePostSkills from "../../hooks/dashboard/usePostSkills";
 
 function SkillsForm() {
-  const [studentId, setStudentId] = useState();
+  const [studentId, setStudentId] = useState('');
   const [skills, setSkills] = useState({
     UIUX: 0,
     backend: 0,
@@ -10,7 +10,7 @@ function SkillsForm() {
     "design thinking": 0,
     frontend: 0
   });
-  const postForm = usePostSkills();
+  const postForm = usePostSkills(studentId, skills);
 
   const handleSelectChange = (skill, value) => {
     setSkills({
