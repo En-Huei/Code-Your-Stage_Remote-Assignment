@@ -10,9 +10,10 @@ import {
 import { Radar } from "react-chartjs-2";
 
 // Import utilities
-// import { useCookies } from "react-cookie";
+import { useCookies } from "react-cookie";
 import { tailwindConfig } from "../../utils/Utils";
 import { skills } from "../../data/mockData";
+import useSkills from "../../hooks/dashboard/useSkills";
 
 ChartJS.register(
   RadialLinearScale,
@@ -24,7 +25,8 @@ ChartJS.register(
 );
 
 function Skills() {
-  // const [cookies] = useCookies(["studentId"]);
+  const [cookies] = useCookies(["studentId"]);
+  console.log(cookies.studentId);
   // const { studentId } = cookies;
   const studentId = "B11000000";
   const { labels, values } = skills;

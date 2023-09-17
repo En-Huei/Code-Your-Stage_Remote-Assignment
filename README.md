@@ -1,4 +1,6 @@
-[En-Huei's Remote Assignment for AppWorks Camp]  
+[En-Huei's Remote Assignment for AppWorks Camp] 
+
+Assignment Writing Records：https://fuzzy-caravel-f61.notion.site/2023-09-14-d6196ccbd91c488e8045046a1593d615?pvs=4
 
 Once you clone this repo to your computer, you can open your project folder:
 

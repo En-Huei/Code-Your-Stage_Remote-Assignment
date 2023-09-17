@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCookies } from "react-cookie";
 
-const usePostSkills = () => {
+const usePostSkills = (studentId, skills) => {
   const [, setCookie] = useCookies(["studentId"]);
   return async (studentId, skills) => {
     try {
@@ -11,6 +11,7 @@ const usePostSkills = () => {
         { thisIsDefinitelyWrong: true }
       );
       setCookie("studentId", studentId);
+      setCookie("skills", skills);
       alert("送出成功");
     } catch (error) {
       alert(error);
