@@ -43,10 +43,9 @@ function Academy() {
     { labelsToCombine: ["工商管理學系 科技管理組", "工商管理學系", "會計學系", "國際企業學系", "資訊管理學系"], newLabel: "管理學院" },
     { labelsToCombine: ["物理治療學系"], newLabel: "醫學院" },
     { labelsToCombine: ["戲劇學系", "外國語文學系 / 圖書資訊學系", "歷史學系", "外國語文學系/社會學系"], newLabel: "文學院" }
-  ]
-  let condensedLabels = labelMappings.map(tuple => tuple.newLabel);
-  let condensedValues = new Array(condensedLabels.length); for (let i = 0; i < condensedLabels.length; ++i) condensedValues[i] = 0;
-  console.log(condensedLabels);
+  ];
+  const condensedLabels = labelMappings.map(tuple => tuple.newLabel);
+  const condensedValues = new Array(condensedLabels.length); for (let i = 0; i < condensedLabels.length; ++i) condensedValues[i] = 0;
   for (let i = 0; i < labels.length; i++) {
     for (let j = 0; j < condensedLabels.length; j++) {
       if (labelMappings[j].labelsToCombine.includes(labels[i])) {
@@ -56,10 +55,9 @@ function Academy() {
       }
     }
   }
-  console.log(condensedValues);
   //fewer labels, higher values condensed
   const chartData = {
-    condensedLabels,
+    labels: condensedLabels,
     datasets: [
       {
         label: "Distribution of colleges",

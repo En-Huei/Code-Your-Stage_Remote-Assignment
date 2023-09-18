@@ -1,5 +1,5 @@
 import LineChart from "../../charts/LineChart01";
-import { applicationStats } from "../../data/mockData"; // mock data
+// import { applicationStats } from "../../data/mockData"; // mock data
 import useApplicationStats from "../../hooks/dashboard/useApplicationStats"; // API
 
 // Import utilities

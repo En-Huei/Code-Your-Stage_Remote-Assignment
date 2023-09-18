@@ -27,8 +27,9 @@ ChartJS.register(
 function Skills() {
   const [cookies] = useCookies(["studentId"]);
   console.log(cookies.studentId);
-  // const { studentId } = cookies;
-  const studentId = "B11000000";
+  const { studentId } = cookies;
+  // const studentId = "B11000000";
+  // const skills = useSkills(studentId);
   const { labels, values } = skills;
   const chartData = {
     labels,
@@ -56,7 +57,7 @@ function Skills() {
           <Radar data={chartData} />
         </div>
       ) : (
-        <div className="pt-20 text-center">尚未輸入數值，請先送出右方表單</div>
+        <div className="pt-20 text-center">尚未輸入數值，請先送出左方表單</div>
       )}
     </div>
   );
