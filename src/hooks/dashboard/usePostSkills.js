@@ -5,8 +5,6 @@ const usePostSkills = (studentId, skills) => {
   const [, setCookie] = useCookies(["studentId"]);
   return async (studentId, skills) => {
     try {
-      console.log(studentId);
-      console.log(skills);
       await axios.post(`https://api.projectszero.tech/skills/${studentId}`, skills,
         { thisIsDefinitelyWrong: true }
       );

@@ -12,7 +12,7 @@ import { Radar } from "react-chartjs-2";
 // Import utilities
 import { useCookies } from "react-cookie";
 import { tailwindConfig } from "../../utils/Utils";
-import { skills } from "../../data/mockData";
+// import { skills } from "../../data/mockData";
 import useSkills from "../../hooks/dashboard/useSkills";
 
 ChartJS.register(
@@ -25,11 +25,11 @@ ChartJS.register(
 );
 
 function Skills() {
-  const [cookies] = useCookies(["studentId"]);
-  console.log(cookies.studentId);
-  const { studentId } = cookies;
+  let [cookies] = useCookies(["studentId"]);
+  let  studentId  = cookies.studentId;
+  console.log(studentId);
   // const studentId = "B11000000";
-  // const skills = useSkills(studentId);
+  let skills = useSkills(studentId);
   const { labels, values } = skills;
   const chartData = {
     labels,

@@ -1,18 +1,23 @@
-import axios from "axios";
-import { useCookies } from "react-cookie";
 import useSWRFetch from "../useSWRFetch";
-const useSkills = () => {
+import { skills } from "../../data/mockData";
+const useSkills = (studentId) => {
   // finish it by yourself
-  const [cookies, setCookie] = useCookies(["studentId"]);
-  studentId = cookies.studentId;
-  try {
-    skills = useSWRFetch(`https://api.projectszero.tech/skills/${studentId}`);
-    console.log(skills);
-    alert("讀取成功");
-  } catch (error) {
-    alert(error);
-  }
-  return skills;
+  const _skills = useSWRFetch(`https://api.projectszero.tech/skills/${studentId}`);
+  let data = _skills.data;
+  return {
+    labels: data && Object.keys(_skills.data),
+    values: data && Object.values(_skills.data)
+  };
+  // below as data undefined prevention
+  /* if (_skills.data) {
+    return {
+      labels: Object.keys(_skills.data),
+      values: Object.values(_skills.data)
+    };
+  } else {
+    // mockData
+    return skills;
+  } */
 };
 
 export default useSkills;

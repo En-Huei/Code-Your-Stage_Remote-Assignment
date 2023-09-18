@@ -18,8 +18,6 @@ function Academy() {
     }
     return color;
   };
-  console.log(labels);
-  console.log(values);
   /* const chartData = {
     labels,
     datasets: [
@@ -45,7 +43,7 @@ function Academy() {
     { labelsToCombine: ["戲劇學系", "外國語文學系 / 圖書資訊學系", "歷史學系", "外國語文學系/社會學系"], newLabel: "文學院" }
   ];
   const condensedLabels = labelMappings.map(tuple => tuple.newLabel);
-  const condensedValues = new Array(condensedLabels.length); for (let i = 0; i < condensedLabels.length; ++i) condensedValues[i] = 0;
+  let condensedValues = new Array(condensedLabels.length); for (let i = 0; i < condensedLabels.length; ++i) condensedValues[i] = 0;
   for (let i = 0; i < labels.length; i++) {
     for (let j = 0; j < condensedLabels.length; j++) {
       if (labelMappings[j].labelsToCombine.includes(labels[i])) {
