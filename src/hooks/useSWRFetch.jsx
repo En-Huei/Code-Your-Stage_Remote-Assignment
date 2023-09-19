@@ -1,19 +1,19 @@
 /* eslint-disable no-shadow */
-import { parseCookies } from "nookies";
+// import { parseCookies } from "nookies";
 import { useState } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import useSWR, { useSWRConfig } from "swr";
 
 export default (url, options) => {
-  const cookies = parseCookies();
-  const { accessToken } = cookies;
+  // const cookies = parseCookies();
+  // const { accessToken } = cookies;
   const { mutate } = useSWRConfig();
   const [isSent, setIsSent] = useState(false);
   const { data, error } = useSWR(
     url,
     async (fetchUrl) => {
       const res = await fetch(fetchUrl, {
-        headers: { authorization: `Bearer ${accessToken}` }
+        // headers: { authorization: `Bearer ${accessToken}` }
       });
       // If the status code is not in the range 200-299,
       // we still try to parse and throw it.
